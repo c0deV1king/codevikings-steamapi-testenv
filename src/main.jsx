@@ -12,14 +12,18 @@ console.log('testing')
   const fetchWarframe = async () => {
     const res = await fetch(URL);
     const data = await res.json();
-    console.log(data);
     console.log("await, async is working")
 
     // grabbing the playerstats object from the data and accessing
     // its array (which is the achievements)
     const playerStats = data.playerstats;
     const achievements = playerStats.achievements;
-    console.log(achievements)
+
+    const achievementNames = achievements.slice(0, 2) // trying to filter out all the object data except the name
+    
+    console.log(achievementNames)
+   // const copiedArr = [...achNames];
+    //console.log(copiedArr)
 
     // Using the "filter()"" method to filter out a specific 
     // value from the array and logging the objects that fit
